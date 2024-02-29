@@ -18,7 +18,15 @@
   <button onclick="recordTime()">Stop Timer</button>  
   <script> 
   let stopTime = undefined;
-  function recordTime() {
+  function countdown() {
+            countdownstart = Math.floor(Math.random() * 9) + 2;
+            for (let i = 0; i < countdownstart; i++) {
+                setTimeout(() => {
+                    document.getElementById('counter').innerHTML = i;
+                }, (countdownstart - i) * 1000);
+            }
+          }
+         function recordTime() {
     stopTime = Date.now();
     console.log(stopTime);
   }
